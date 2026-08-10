@@ -1,0 +1,554 @@
+{
+  "questions": [
+    {
+      "question": "Iza no mpanjaka nampiray ny Imerina tamin'ny 1810?",
+      "choices": [
+        "Andrianampoinimerina",
+        "Radama I",
+        "Ranavalona I",
+        "Andriamasinavalona"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andrianampoinimerina no nampiray ny vazan-tany Imerina, ary nanao ilay teny malaza hoe 'Ny ranomasina no valamparihiko'."
+    },
+    {
+      "question": "Iza no zanak'i Andrianampoinimerina nandimby azy?",
+      "choices": [
+        "Radama I",
+        "Radama II",
+        "Rainilaiarivony",
+        "Andrianjaka"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama I no nandimby an-drainy Andrianampoinimerina tamin'ny 1810, ary nanitatra ny Fanjakana Merina hatrany amoron-dranomasina."
+    },
+    {
+      "question": "Inona no anaram-bohitra nataon'i Andrianjaka renivohitry ny Fanjakana Merina?",
+      "choices": [
+        "Antananarivo",
+        "Ambohimanga",
+        "Fianarantsoa",
+        "Toamasina"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andrianjaka no nanorina an'Antananarivo tamin'ny taonjato faha-17, ary nanjary renivohitra lehibe io."
+    },
+    {
+      "question": "Iza no vadin'i Radama I izay tonga mpanjakavavy taorian'ny nahafatesany?",
+      "choices": [
+        "Ranavalona I",
+        "Ranavalona II",
+        "Ranavalona III",
+        "Rasoherina"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ranavalona I no nandimby an'i Radama I ary nanjaka nandritra ny 33 taona (1828-1861), fotoana niafaran'ny fifandraisana tamin'ny Eoropeana."
+    },
+    {
+      "question": "Iza no mpanjakavavy farany tao amin'ny Fanjakana Merina?",
+      "choices": [
+        "Ranavalona III",
+        "Ranavalona I",
+        "Rasoherina",
+        "Ranavalona II"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ranavalona III no mpanjakavavy farany, ary noroahin'ny Frantsay ho any Alzeria tamin'ny 1897 rehefa lasa zanatany i Madagasikara."
+    },
+    {
+      "question": "Rahoviana no lasa zanatanin'i Frantsa i Madagasikara?",
+      "choices": [
+        "1896",
+        "1810",
+        "1861",
+        "1960"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tamin'ny 6 Aogositra 1896 no nanambaran'i Frantsa fa zanatany i Madagasikara."
+    },
+    {
+      "question": "Inona no antony nahatonga an'i Ambohimanga ho toerana masina ho an'ny Merina?",
+      "choices": [
+        "Toby fonenan'ny mpanjaka Merina taloha sady toeram-pivavahana",
+        "Toeram-piadiana lehibe",
+        "Seranan-tsambo",
+        "Toby ara-barotra"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ambohimanga dia lova iraisam-pirenena UNESCO, toby fonenan'ireo mpanjaka Merina taloha ary mbola atao fitsidihana masina hatramin'izao."
+    },
+    {
+      "question": "Iza no praiminisitra malaza nitondra teo ambanin'ireo mpanjakavavy telo mifanesy?",
+      "choices": [
+        "Rainilaiarivony",
+        "Andriamihaja",
+        "Ratsimandrava",
+        "Rainiharo"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rainilaiarivony dia praiminisitra nitondra nandritra ny fanjakan'i Rasoherina, Ranavalona II, ary Ranavalona III, sady vadin'izy telo mifanesy."
+    },
+    {
+      "question": "Inona no fiteny nampiasaina tamin'ny fanoratana ny lalàna 'Kabaro' voalohany?",
+      "choices": [
+        "Malagasy nosoratana tamin'ny abidia latinina",
+        "Frantsay",
+        "Arabo",
+        "Anglisy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tamin'ny fitondran'i Radama I no nanomboka nampiasa ny abidia latinina ho an'ny teny malagasy, tamin'ny fanampian'ny misionera Anglisy."
+    },
+    {
+      "question": "Inona no antsoina hoe 'Fandroana' ao amin'ny kolontsaina Merina?",
+      "choices": [
+        "Fetin'ny taom-baovao Malagasy",
+        "Fetin'ny fararano",
+        "Fanambadiana ara-panjakana",
+        "Fombam-pandevenana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Fandroana no fetin'ny taom-baovao teo amin'ny Merina, nankalazain'ny mpanjaka niaraka tamin'ny vahoaka."
+    },
+    {
+      "question": "Iza no mpanjaka Merina voalohany nanao fifanarahana ara-barotra tamin'ny Anglisy?",
+      "choices": [
+        "Radama I",
+        "Andrianampoinimerina",
+        "Ranavalona I",
+        "Andrianjaka"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama I dia nanao fifanarahana tamin'ny Anglisy tamin'ny 1817, izay nanaiky ny fahaleovantenan'ny Fanjakana Merina."
+    },
+    {
+      "question": "Inona no fomba fanaovana lalàna nampiasain'ny mpanjaka Merina teo anivon'ny fivorian'ny vahoaka?",
+      "choices": [
+        "Kabary",
+        "Famonosana",
+        "Hira gasy",
+        "Vakodrazana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Kabary dia lahateny ara-panjakana natao teo anivon'ny fivoriam-bahoaka, entina hampitana didy sy lalàna."
+    },
+    {
+      "question": "Iza no mpanjaka nanorina ny fototry ny Fanjakana Merina voalohany indrindra, tao Alasora?",
+      "choices": [
+        "Andriamanelo",
+        "Andrianjaka",
+        "Ralambo",
+        "Andriamasinavalona"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andriamanelo no laharana voalohany amin'ireo mpanjaka Merina nanan-tantara voarakitra, ary tao Alasora no toby fototra nanorenany."
+    },
+    {
+      "question": "Inona no atao hoe 'Rova' any Antananarivo?",
+      "choices": [
+        "Toby fonenan'ny mpanjaka Merina",
+        "Sekoly ho an'ny zaza andriana",
+        "Tranombokim-panjakana",
+        "Tsenam-bahoaka"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Rova dia toby fonenan'ny mpanjaka Merina teo amin'ny havoana ambonin'Antananarivo, misy trano mpanjaka maro toy ny Manjakamiadana."
+    },
+    {
+      "question": "Iza no vahiny frantsay nanampy an-dRanavalona I nanangana indostria tao Mantasoa (fanaovana vy, basy, sns)?",
+      "choices": [
+        "Jean Laborde",
+        "David Jones",
+        "James Hastie",
+        "David Griffiths"
+      ],
+      "correctIndex": 0,
+      "explanation": "Jean Laborde dia teknisianina frantsay nanangana orin'asa isan-karazany tao Mantasoa, notarihin'i Ranavalona I mba tsy hiankina amin'ny vahiny."
+    },
+    {
+      "question": "Firy taona no nitondran'i Rainilaiarivony ho praiminisitry ny Fanjakana Merina?",
+      "choices": [
+        "31 taona",
+        "10 taona",
+        "50 taona",
+        "5 taona"
+      ],
+      "correctIndex": 0,
+      "explanation": "Nitondra nandritra ny 31 taona (1864-1895) i Rainilaiarivony, teo ambanin'ny fanjakan'i Rasoherina, Ranavalona II ary Ranavalona III."
+    },
+    {
+      "question": "Inona no atao hoe 'sampy' ao amin'ny finoana nentim-paharazana Merina taloha?",
+      "choices": [
+        "Fitaovana masina natao fiarovana, notompoin'ny fanjakana",
+        "Fombam-panambadiana",
+        "Vola nampiasaina tamin'ny varotra",
+        "Fitaovam-piadiana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny sampy dia fitaovana masina notompoin'ny mpanjaka sy ny vahoaka, natao fiarovana ny fanjakana, toy ny Kelimalaza sy Manjakatsiroa."
+    },
+    {
+      "question": "Iza no mpanjakavavy nandroaka ny sampy tamin'ny fomba ofisialy ary nanambara an'i Madagasikara ho fanjakana Kristiana tamin'ny 1869?",
+      "choices": [
+        "Ranavalona II",
+        "Ranavalona I",
+        "Rasoherina",
+        "Ranavalona III"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ranavalona II dia niova ho Kristiana ary nandoro ampahibemaso ny sampim-panjakana tamin'ny 1869, nanamarika ny fiovan'ny fivavahana ofisialy."
+    },
+    {
+      "question": "Iza no zanaka lahin'i Ranavalona I nandimby azy ho mpanjaka?",
+      "choices": [
+        "Radama II",
+        "Rainilaiarivony",
+        "Andrianjaka",
+        "Rainiharo"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama II no nandimby an-dReniny Ranavalona I tamin'ny 1861, ary nanokatra indray ny fanjakana tamin'ny vahiny."
+    },
+    {
+      "question": "Inona no niseho tamin'i Radama II tamin'ny 1863?",
+      "choices": [
+        "Novonoina teo amin'ny fanonganam-panjakana",
+        "Nalefa sesitany",
+        "Nametra-pahefana ho an'ny zanany",
+        "Nandresy tamin'ny ady lehibe"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama II dia novonoin'ireo manam-pahefana teo aminy tamin'ny fanonganam-panjakana ny 1863, taorian'ny fitondrana tsy nankasitrahan'ny vahoaka."
+    },
+    {
+      "question": "Iza no mpanjakavavy nandimby an'i Radama II?",
+      "choices": [
+        "Rasoherina",
+        "Ranavalona II",
+        "Ranavalona III",
+        "Ranavalona I"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rasoherina no lasa mpanjakavavy taorian'ny nahafatesan'i Radama II, ary nanjaka tamin'ny 1863 ka hatramin'ny 1868."
+    },
+    {
+      "question": "Rahoviana no notanterahina ny Ady Frantsay-Hova voalohany?",
+      "choices": [
+        "1883-1885",
+        "1894-1895",
+        "1810-1815",
+        "1861-1863"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Ady Frantsay-Hova voalohany dia natao tamin'ny 1883-1885, niafara tamin'ny fanaovana fifanarahana nampitombo ny herin'i Frantsa teto Madagasikara."
+    },
+    {
+      "question": "Rahoviana no notanterahina ny Ady Frantsay-Hova faharoa, izay niafaran'ny fahaleovantenan'ny Fanjakana Merina?",
+      "choices": [
+        "1894-1895",
+        "1883-1885",
+        "1896-1897",
+        "1810-1815"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Ady Frantsay-Hova faharoa (1894-1895) dia nitarika ny fandresen'i Frantsa sy ny fanambarana an'i Madagasikara ho zanatany tamin'ny 1896."
+    },
+    {
+      "question": "Inona no antsoina hoe 'Menalamba'?",
+      "choices": [
+        "Hetsi-panoherana tamin'ny fanjanahantany frantsay, avy amin'ny lamba mena nentiny",
+        "Fombam-panambadiana Merina",
+        "Fitokisam-bola fahiny",
+        "Antokom-piadidiana ara-panjakana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Menalamba dia mpikomy nanohitra ny fanjanahantany frantsay tamin'ny 1895-1898, nomena io anarana io noho ny lamba mena nentiny."
+    },
+    {
+      "question": "Inona no antokom-piarahamonina telo lehibe teo amin'ny Fanjakana Merina fahiny?",
+      "choices": [
+        "Andriana, Hova, Andevo",
+        "Mpanjaka, Miaramila, Mpamboly",
+        "Ray aman-dreny, Zaza, Antitra",
+        "Mpiasa, Mpitantana, Mpivarotra"
+      ],
+      "correctIndex": 0,
+      "explanation": "Nizara antokom-piarahamonina telo lehibe ny Fanjakana Merina: ny Andriana (andriana), ny Hova (olom-pirenena afaka), ary ny Andevo (andevo)."
+    },
+    {
+      "question": "Inona no atao hoe 'Fanompoana' teo amin'ny fitondrana Merina fahiny?",
+      "choices": [
+        "Asa an-tery natao ho an'ny fanjakana, tsy nandraisan-karama",
+        "Hetra vola aloa isam-bolana",
+        "Fifidianana solombavambahoaka",
+        "Fombam-panambadiana ara-panjakana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Fanompoana dia rafitra fanaovana asa an-tery ho an'ny fanjakana (asa vaventy, tafika, sns), tsy nandraisan-karama."
+    },
+    {
+      "question": "Iza no solontena anglisy nanao fifanarahana tamin'i Radama I tamin'ny 1820 mikasika ny fandraràna ny varotra andevo?",
+      "choices": [
+        "James Hastie",
+        "Jean Laborde",
+        "David Jones",
+        "Robert Farquhar"
+      ],
+      "correctIndex": 0,
+      "explanation": "James Hastie no solontena britanika niasa akaiky an'i Radama I ary nanampy nanatanteraka ny fifanarahana namorona tafika vaovao sy nandrara ny varotra andevo."
+    },
+    {
+      "question": "Rahoviana no navoaka voalohany manontolo ny Baiboly tamin'ny teny Malagasy?",
+      "choices": [
+        "1835",
+        "1810",
+        "1861",
+        "1896"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Baiboly manontolo tamin'ny teny Malagasy dia navoaka tamin'ny 1835, vokatry ny asan'ny misionera LMS niaraka tamin'ny mpandika teny malagasy."
+    },
+    {
+      "question": "Rahoviana no nampidirina voalohany ny milina fanontam-boky tany Madagasikara?",
+      "choices": [
+        "1826-1827",
+        "1896",
+        "1810",
+        "1861"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny misionera avy amin'ny London Missionary Society (LMS) no nampiditra ny milina fanontam-boky voalohany tao Antananarivo tamin'ny 1826-1827."
+    },
+    {
+      "question": "Iza roa amin'ireo misionera anglisy nanampy namorona ny abidia latinina ho an'ny teny Malagasy?",
+      "choices": [
+        "David Jones sy David Griffiths",
+        "Jean Laborde sy James Hastie",
+        "James Cameron sy Robert Farquhar",
+        "David Jones sy Jean Laborde"
+      ],
+      "correctIndex": 0,
+      "explanation": "David Jones sy David Griffiths, misionera avy amin'ny LMS, no nanampy namorona ny abidia latinina ho an'ny teny Malagasy tamin'ny taona 1820 tany ho any."
+    },
+    {
+      "question": "Firy ny 'Vohitra Masina' (Ny Vohitra Roa Ambin'ny Folo) ao Imerina?",
+      "choices": [
+        "12",
+        "7",
+        "20",
+        "4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny 'Vohitra Roa Ambin'ny Folo' dia vohitra 12 heverina ho masina teo amin'ny tantaran'ny Fanjakana Merina, anisan'izany i Antananarivo sy Ambohimanga."
+    },
+    {
+      "question": "Inona no atao hoe 'Fokonolona' amin'ny fomban-drazana Malagasy?",
+      "choices": [
+        "Fitambaran'ny mponina ao amin'ny vondrom-piarahamonina iray",
+        "Antokom-panjakana miandraikitra ny ady",
+        "Fivavahana manokana",
+        "Tarana-mpanjaka"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Fokonolona dia fitambaran'ny mponina ao amin'ny vondrom-piarahamonina iray, izay niray hina tamin'ny fanapahan-kevitra momba ny raharaham-bahoaka."
+    },
+    {
+      "question": "Iza no antsoina hoe 'Mpanandro' ao amin'ny fomba fiaina Merina fahiny?",
+      "choices": [
+        "Olona mahay mamantatra andro tsara ho an'ny asa lehibe",
+        "Mpitandro filaminana ara-panjakana",
+        "Mpanao varotra vary",
+        "Mpitarika ny tafika"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Mpanandro dia manam-pahaizana mamantatra ny andro tsara na ratsy ho an'ny raharaha lehibe (fanambadiana, famadihana, sns) araka ny 'vintana'."
+    },
+    {
+      "question": "Inona no atao hoe 'Vintana' amin'ny finoana Malagasy fahiny?",
+      "choices": [
+        "Hevitra momba ny anjara-toe-piainana miankina amin'ny daty nahaterahana",
+        "Fombam-panambadiana",
+        "Fitaovam-piadiana",
+        "Antokom-piarahamonina"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Vintana dia finoana fa misy fifandraisana eo amin'ny daty nahaterahan'ny olona sy ny anjara-toe-piainany, mifototra amin'ny kalandrie Malagasy."
+    },
+    {
+      "question": "Rahoviana ofisialy no nofoanan'ny Frantsay ny fanandevozana teto Madagasikara?",
+      "choices": [
+        "27 Septambra 1896",
+        "1810",
+        "1861",
+        "1935"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny fanandevozana dia nofoanan'ny fanjakana mpanjanaka frantsay tamin'ny didy navoaka ny 27 Septambra 1896."
+    },
+    {
+      "question": "Inona no atao amin'ny fomba fanaovana 'Famadihana'?",
+      "choices": [
+        "Fanodinana ny razana ao am-pasana sy fanoloana lambamena",
+        "Fanaovana fanambadiana ara-panjakana",
+        "Fanokafana taom-baovao",
+        "Fanaovana fifidianana mpanjaka"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Famadihana dia fombam-pirazanana Merina, ahitana ny fandraisana ny taolam-bavan-drazana ary fanoloana ny lambamena manodidina azy."
+    },
+    {
+      "question": "Inona no vokatry ny fiaraha-miasan'i Jean Laborde tamin'i Ranavalona I momba ny fitaovam-piadiana?",
+      "choices": [
+        "Fanamboarana basy sy tafondro teto an-toerana",
+        "Fanamboarana sambo lehibe hoentina hivarotra",
+        "Fanamboarana fiara mpitatitra",
+        "Fanamboarana fitaovam-pifandraisana"
+      ],
+      "correctIndex": 0,
+      "explanation": "Jean Laborde dia nanangana orin'asa tao Mantasoa mba hamokarana basy, tafondro, ary fitaovana isan-karazany mba tsy hiankinan'ny Fanjakana Merina amin'ny vahiny."
+    },
+    {
+      "question": "Iza no mpanjaka Merina namorona miaramila voalamina araka ny fomba Eoropeana?",
+      "choices": [
+        "Radama I",
+        "Andrianampoinimerina",
+        "Ranavalona I",
+        "Rainilaiarivony"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama I, tamin'ny fanampian'ny mpanolotsaina anglisy, no namorona tafika voalamina sy nampiofana araka ny fomba Eoropeana."
+    },
+    {
+      "question": "Rahoviana no maty i Andrianampoinimerina, mpanjaka nampiray ny Imerina?",
+      "choices": [
+        "1810",
+        "1861",
+        "1896",
+        "1828"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andrianampoinimerina dia maty tamin'ny 1810, ary Radama I zanany no nandimby azy."
+    },
+    {
+      "question": "Inona no santionan'asa nataon'i Radama I momba ny fanabeazana ny vahoaka?",
+      "choices": [
+        "Nanokatra sekoly niaraka tamin'ny misionera LMS",
+        "Nampihatra ny fanandevozana lehibe kokoa",
+        "Nandrava ny sekoly rehetra",
+        "Nanao fifanarahana tamin'ny Sinoa ihany"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama I dia niara-niasa tamin'ny misionera avy amin'ny LMS mba hanokafana sekoly maro sy hampianatra vahoaka hamaky teny sy hanoratra."
+    },
+    {
+      "question": "Iza no misionera Skotisy nanampy nanangana ny 'Manjakamiadana' amin'ny hazo voalohany, tamin'ny 1839?",
+      "choices": [
+        "James Cameron",
+        "David Jones",
+        "Jean Laborde",
+        "James Hastie"
+      ],
+      "correctIndex": 0,
+      "explanation": "James Cameron, misionera Skotisy, no nanamboatra ny 'Manjakamiadana' tamin'ny hazo tamin'ny 1839, alohan'ny nanolorana azy ho vato nataon'i Jean Laborde."
+    },
+    {
+      "question": "Inona no loko nampiasain'ny Menalamba ho famantarana ny fikomiany?",
+      "choices": [
+        "Mena",
+        "Mainty",
+        "Vony",
+        "Mavo"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny anarana hoe 'Menalamba' dia avy amin'ny lamba mena nentin'ireo mpikomy nanohitra ny fanjanahantany frantsay."
+    },
+    {
+      "question": "Iza no mpanjaka nametraka ny fizarana faritany atao hoe 'toko' ho fitantanana ny Imerina?",
+      "choices": [
+        "Andrianampoinimerina",
+        "Radama I",
+        "Ranavalona I",
+        "Rainilaiarivony"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andrianampoinimerina no namorona rafi-pitantanana nozarazaraina ho 'toko' mba hahafahana mitantana tsara ny faritra vaovao azo."
+    },
+    {
+      "question": "Taiza no toerana nametrahan'ny Frantsay an'i Ranavalona III sesitany, taorian'ny naharesen'ny Fanjakana Merina?",
+      "choices": [
+        "Alzeria",
+        "Frantsa",
+        "Maorisy",
+        "Reunion"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ranavalona III dia noroahin'ny Frantsay ho any Alzeria tamin'ny 1897, ary maty tany tamin'ny 1917 tsy niverina intsony tany Madagasikara."
+    },
+    {
+      "question": "Inona no anaran'ilay fanjakana lehibe teo andrefan'i Madagasikara, mpifaninana ara-tafika tamin'ny Merina ary notafihan'i Radama I?",
+      "choices": [
+        "Sakalava",
+        "Betsileo",
+        "Antaimoro",
+        "Antandroy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Fanjakan'i Sakalava, teo amin'ny faritra andrefana, no mpifaninana lehibe tamin'ny Merina; nitondra fananihana ho azy i Radama I mba hanitatra ny fanjakany."
+    },
+    {
+      "question": "Iza no foko notafihan'i Radama I mba hampiditra ny faritra atsimo-afovoany ho anisan'ny Fanjakana Merina?",
+      "choices": [
+        "Betsileo",
+        "Sakalava",
+        "Antaisaka",
+        "Bara"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radama I dia nitarika fananihana nahatratra ny faritry ny Betsileo, ka nampiditra io faritra io ho anisan'ny fanjakana lehibe notarihiny."
+    },
+    {
+      "question": "Iza no governora britanika tany Maorisy nanohana ny fifandraisana teo amin'i Radama I sy ny Anglisy?",
+      "choices": [
+        "Robert Farquhar",
+        "James Hastie",
+        "Jean Laborde",
+        "David Jones"
+      ],
+      "correctIndex": 0,
+      "explanation": "Robert Farquhar, governora britanika tany Maorisy, no nanohana ny fifanarahana teo amin'i Radama I sy Anglisy, anisan'izany ny fandrarana ny varotra andevo."
+    },
+    {
+      "question": "Inona no atao hoe 'Hova' teo amin'ny fizarana sokajin'ny Fanjakana Merina fahiny?",
+      "choices": [
+        "Olom-pirenena afaka, tsy andriana na andevo",
+        "Andriana ambony indrindra",
+        "Mpitondra tafika manokana",
+        "Vahiny mpivarotra"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Hova dia sokajin'olom-pirenena afaka, teo anelanelan'ny Andriana (andriana) sy ny Andevo, ary nifototra tamin'ny fambolena sy varotra ny ankamaroany."
+    },
+    {
+      "question": "Inona no fototry ny toe-karena Merina fahiny, novokarina tamin'ny tanimbary an-kaviana eny amin'ny havoana?",
+      "choices": [
+        "Vary",
+        "Landy",
+        "Karazan-bato sarobidy",
+        "Kafe"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny fambolem-bary tamin'ny tanimbary an-kaviana no fototry ny toe-karena Merina fahiny, tamin'ny alalan'ny fikojana rano matihanina."
+    },
+    {
+      "question": "Inona no anaran'ny tranobe fonenan'ny mpanjaka ao amin'ny Rova Antananarivo, izay nodoran'ny afo tamin'ny 1995?",
+      "choices": [
+        "Manjakamiadana",
+        "Andafiavaratra",
+        "Tsimiaro",
+        "Ambohidratrimo"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ny Manjakamiadana, tranobe lehibe indrindra ao amin'ny Rova, dia nodoran'ny afo lehibe tamin'ny 1995, ary namboarina indray taty aoriana."
+    }
+  ]
+}
