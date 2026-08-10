@@ -249,11 +249,18 @@ class _QuizScreenState extends State<QuizScreen> {
                     Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: LinearProgressIndicator(
-                          value: progress,
-                          minHeight: 8,
-                          backgroundColor: const Color(0xFFF3D6D6),
-                          valueColor: const AlwaysStoppedAnimation(kDarkRed),
+                        child: TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0, end: progress),
+                          duration: const Duration(milliseconds: 450),
+                          curve: Curves.easeOutCubic,
+                          builder: (context, animatedValue, child) {
+                            return LinearProgressIndicator(
+                              value: animatedValue,
+                              minHeight: 8,
+                              backgroundColor: const Color(0xFFF3D6D6),
+                              valueColor: const AlwaysStoppedAnimation(kDarkRed),
+                            );
+                          },
                         ),
                       ),
                     ),
