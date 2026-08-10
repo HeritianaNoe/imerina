@@ -1,4 +1,4 @@
-package com.example.imerina
+package comm.imerina.gs
 
 import io.flutter.embedding.android.FlutterActivity
 

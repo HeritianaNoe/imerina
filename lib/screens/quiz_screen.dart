@@ -285,23 +285,63 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 const SizedBox(height: 24),
                 Expanded(
-                  child: ListView.separated(
+                  child: GridView.builder(
                     itemCount: currentQuestion.choices.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 12),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 12,
+                      crossAxisSpacing: 12,
+                      mainAxisExtent: 90,
+                    ),
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () => _selectAnswer(currentQuestion, index),
                         borderRadius: BorderRadius.circular(14),
                         child: Container(
+                          alignment: Alignment.centerLeft,
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             color: _choiceColor(currentQuestion, index),
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: kDarkRed, width: 1.2),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.08),
+                                blurRadius: 6,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
                           ),
-                          child: Text(
-                            currentQuestion.choices[index],
-                            style: const TextStyle(fontSize: 16, color: Colors.black87),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 26,
+                                height: 26,
+                                alignment: Alignment.center,
+                                decoration: const BoxDecoration(
+                                  color: kDarkRed,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Text(
+                                  String.fromCharCode(65 + index),
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: kWhite,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Flexible(
+                                child: Text(
+                                  currentQuestion.choices[index],
+                                  textAlign: TextAlign.left,
+                                  style: const TextStyle(fontSize: 16, color: Colors.black87),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );
