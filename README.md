@@ -1,5 +1,5 @@
 # imerina
 
-App Imerina.
+App Game Quiz Imerina.
 
 "# imerina" 
