@@ -231,10 +231,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 6),
+                          horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
                         color: kDarkRed,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                       child: Text(
                         'D$currentStage/$kTotalStages',
@@ -281,16 +281,16 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
                 Text(
                   currentQuestion.questionText,
                   style: const TextStyle(
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: kDarkRed,
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
                 Expanded(
                   child: GridView.builder(
                     itemCount: currentQuestion.choices.length,
@@ -345,7 +345,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 child: Text(
                                   currentQuestion.choices[index],
                                   textAlign: TextAlign.left,
-                                  style: const TextStyle(fontSize: 16, color: Colors.black87),
+                                  style: const TextStyle(fontSize: 14, color: Colors.black87),
                                 ),
                               ),
                             ],
