@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  'Quiz Merina',
+                  'Quiz Imerina',
                   style: TextStyle(
                     fontSize: 34,
                     fontWeight: FontWeight.bold,

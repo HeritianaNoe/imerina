@@ -16,7 +16,7 @@ void showMerinaAboutDialog(BuildContext context) {
             Icon(Icons.account_balance, color: kDarkRed),
             SizedBox(width: 10),
             Text(
-              'Quiz Merina',
+              'Quiz Imerina',
               style: TextStyle(color: kDarkRed, fontWeight: FontWeight.bold),
             ),
           ],
@@ -40,7 +40,7 @@ void showMerinaAboutDialog(BuildContext context) {
               ),
               SizedBox(height: 4),
               Text(
-                'Natao tamin\'ny Flutter',
+                '<> RASOLOMANANA Heritina Noe',
                 style: TextStyle(fontSize: 13, color: Colors.black54),
               ),
             ],

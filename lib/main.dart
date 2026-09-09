@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:window_manager/window_manager.dart';
 import 'screens/home_screen.dart';
 
 /// Loko fototra ampiasaina manerana ny appli: rouge foncé sy blanc.
@@ -13,8 +14,6 @@ void main() async {
 
   // Android/iOS => landscape (natsangana amin'ny sisiny).
   // Desktop (Windows/macOS/Linux) => portrait.
-  // (Tsy misy fiantraikany ny setPreferredOrientations amin'ny web, fa azo antoka
-  // ny miantso azy foana.)
   final bool isMobile = !kIsWeb &&
       (defaultTargetPlatform == TargetPlatform.android ||
           defaultTargetPlatform == TargetPlatform.iOS);
@@ -24,6 +23,30 @@ void main() async {
         ? [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]
         : [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   );
+
+  final bool isDesktop = !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.windows ||
+          defaultTargetPlatform == TargetPlatform.macOS ||
+          defaultTargetPlatform == TargetPlatform.linux);
+
+  if (isDesktop) {
+    await windowManager.ensureInitialized();
+
+    const WindowOptions windowOptions = WindowOptions(
+      size: Size(900, 680), 
+      minimumSize: Size(900, 680),
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+      titleBarStyle: TitleBarStyle.normal,
+      title: 'Imerina',
+    );
+
+    await windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    });
+  }
 
   runApp(const MerinaQuizApp());
 }
@@ -51,6 +74,7 @@ class MerinaQuizApp extends StatelessWidget {
           foregroundColor: kWhite,
           elevation: 0,
         ),
+        // Eto no nitsaharana ilay typo (ElevatedButtonThemeData no marina)
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: kDarkRed,
