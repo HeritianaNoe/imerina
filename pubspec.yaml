@@ -36,9 +36,9 @@ flutter:
 
   assets:
       - assets/fonts/
-      - assets/images/
       - assets/json/merina.json
       - assets/sounds/
+      - assets/images/bg_merina.jpg
 
   fonts:
     - family: Roboto

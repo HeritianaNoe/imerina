@@ -170,13 +170,18 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Color _choiceColor(Question currentQuestion, int index) {
     if (!answered) return kWhite;
-    if (index == currentQuestion.correctIndex) return const Color(0xFFD7F5DA); // vert malefaka
+    if (index == currentQuestion.correctIndex) {
+      return const Color(0xFFD7F5DA); // vert malefaka
+    }
     if (index == selectedChoice) return const Color(0xFFF9D6D6); // mena malefaka
     return kWhite;
   }
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final isSmall = size.height < 700;
+
     return Scaffold(
       backgroundColor: kWhite,
       appBar: AppBar(
@@ -186,6 +191,7 @@ class _QuizScreenState extends State<QuizScreen> {
             if (snapshot.hasData) {
               return Text(
                 'Fanontaniana ${indexWithinStage + 1}/$kQuestionsPerStage',
+                style: TextStyle(fontSize: isSmall ? 16 : 18),
               );
             }
             return const Text('Quiz Merina');
@@ -209,10 +215,13 @@ class _QuizScreenState extends State<QuizScreen> {
           }
           if (snapshot.hasError) {
             return Center(
-              child: Text(
-                "Nisy olana teo am-pakana ny fanontaniana:\n${snapshot.error}",
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: kDarkRed),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Text(
+                  "Nisy olana teo am-pakana ny fanontaniana:\n${snapshot.error}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: kDarkRed),
+                ),
               ),
             );
           }
@@ -222,198 +231,285 @@ class _QuizScreenState extends State<QuizScreen> {
               questions[_questionIndexFor(stageStartIndex, indexWithinStage)];
           final progress = (indexWithinStage + 1) / kQuestionsPerStage;
 
-          return Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 3),
-                      decoration: BoxDecoration(
-                        color: kDarkRed,
-                        borderRadius: BorderRadius.circular(16),
+          return Stack(
+            children: [
+              // Fond image maivana (optional)
+              Positioned.fill(
+                child: Image.asset(
+                  'assets/images/bg_merina.jpg',
+                  fit: BoxFit.cover,
+                  opacity: const AlwaysStoppedAnimation(0.08),
+                  errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+                ),
+              ),
+              // Contenu principal
+              SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    size.width > 500 ? 32 : 16,
+                    12,
+                    size.width > 500 ? 32 : 16,
+                    16,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // Progress + Stage + Timer
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: kDarkRed,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Text(
+                              'D$currentStage/$kTotalStages',
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: kWhite,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: TweenAnimationBuilder<double>(
+                                tween: Tween<double>(begin: 0, end: progress),
+                                duration: const Duration(milliseconds: 450),
+                                curve: Curves.easeOutCubic,
+                                builder: (context, animatedValue, child) {
+                                  return LinearProgressIndicator(
+                                    value: animatedValue,
+                                    minHeight: 8,
+                                    backgroundColor: const Color(0xFFF3D6D6),
+                                    valueColor: const AlwaysStoppedAnimation(
+                                        kDarkRed),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Icon(
+                            Icons.timer_outlined,
+                            size: 18,
+                            color: remainingSeconds <= 10
+                                ? Colors.red
+                                : kDarkRed,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            '${remainingSeconds}s',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: remainingSeconds <= 10
+                                  ? Colors.red
+                                  : kDarkRed,
+                            ),
+                          ),
+                        ],
                       ),
-                      child: Text(
-                        'D$currentStage/$kTotalStages',
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
+                      SizedBox(height: isSmall ? 12 : 16),
+                      // Fanontaniana
+                      Container(
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
                           color: kWhite,
+                          borderRadius: BorderRadius.circular(14),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.06),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          currentQuestion.questionText,
+                          style: TextStyle(
+                            fontSize: isSmall ? 15 : 16,
+                            fontWeight: FontWeight.bold,
+                            color: kDarkRed,
+                            height: 1.35,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: TweenAnimationBuilder<double>(
-                          tween: Tween<double>(begin: 0, end: progress),
-                          duration: const Duration(milliseconds: 450),
-                          curve: Curves.easeOutCubic,
-                          builder: (context, animatedValue, child) {
-                            return LinearProgressIndicator(
-                              value: animatedValue,
-                              minHeight: 8,
-                              backgroundColor: const Color(0xFFF3D6D6),
-                              valueColor: const AlwaysStoppedAnimation(kDarkRed),
+                      SizedBox(height: isSmall ? 12 : 16),
+                      // Safidy (choices)
+                      Expanded(
+                        child: LayoutBuilder(
+                          builder: (context, constraints) {
+                            // Raha kely dia 1 column, raha lehibe dia 2
+                            final crossAxisCount =
+                                constraints.maxWidth > 400 ? 2 : 1;
+                            final itemHeight = crossAxisCount == 1 ? 72.0 : 88.0;
+
+                            return GridView.builder(
+                              itemCount: currentQuestion.choices.length,
+                              physics: const BouncingScrollPhysics(),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: crossAxisCount,
+                                mainAxisSpacing: 10,
+                                crossAxisSpacing: 10,
+                                mainAxisExtent: itemHeight,
+                              ),
+                              itemBuilder: (context, index) {
+                                return Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () =>
+                                        _selectAnswer(currentQuestion, index),
+                                    borderRadius: BorderRadius.circular(14),
+                                    child: Container(
+                                      alignment: Alignment.centerLeft,
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 12, vertical: 10),
+                                      decoration: BoxDecoration(
+                                        color: _choiceColor(
+                                            currentQuestion, index),
+                                        borderRadius: BorderRadius.circular(14),
+                                        border: Border.all(
+                                          color: answered &&
+                                                  index ==
+                                                      currentQuestion
+                                                          .correctIndex
+                                              ? Colors.green.shade400
+                                              : answered &&
+                                                      index == selectedChoice
+                                                  ? Colors.red.shade300
+                                                  : Colors.grey.shade200,
+                                          width: 1.5,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.06),
+                                            blurRadius: 5,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            width: 28,
+                                            height: 28,
+                                            alignment: Alignment.center,
+                                            decoration: const BoxDecoration(
+                                              color: kDarkRed,
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Text(
+                                              String.fromCharCode(65 + index),
+                                              style: const TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold,
+                                                color: kWhite,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 10),
+                                          Expanded(
+                                            child: Text(
+                                              currentQuestion.choices[index],
+                                              style: TextStyle(
+                                                fontSize: isSmall ? 13 : 14,
+                                                color: Colors.black87,
+                                                height: 1.25,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                             );
                           },
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Icon(
-                      Icons.timer_outlined,
-                      size: 18,
-                      color: remainingSeconds <= 10 ? Colors.red : kDarkRed,
-                    ),
-                    const SizedBox(width: 4),
-                    Text(
-                      '${remainingSeconds}s',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: remainingSeconds <= 10 ? Colors.red : kDarkRed,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  currentQuestion.questionText,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: kDarkRed,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Expanded(
-                  child: GridView.builder(
-                    itemCount: currentQuestion.choices.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 12,
-                      crossAxisSpacing: 12,
-                      mainAxisExtent: 90,
-                    ),
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: () => _selectAnswer(currentQuestion, index),
-                        borderRadius: BorderRadius.circular(14),
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          padding: const EdgeInsets.all(16),
+                      // Feedback + Bouton manaraka
+                      if (answered) ...[
+                        if (lastAnswerCorrect == false)
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            margin: const EdgeInsets.only(bottom: 8),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF9D6D6),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              selectedChoice == null
+                                  ? 'Tapitra ny fotoana! Hiverina amin\'ny fiantombohan\'ny dingana $currentStage ianao.'
+                                  : 'Diso! Hiverina amin\'ny fiantombohan\'ny dingana $currentStage ianao.',
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                                color: kDarkRed,
+                              ),
+                            ),
+                          ),
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          margin: const EdgeInsets.only(bottom: 12),
                           decoration: BoxDecoration(
-                            color: _choiceColor(currentQuestion, index),
-                            borderRadius: BorderRadius.circular(14),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.08),
-                                blurRadius: 6,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
+                            color: const Color(0xFFFBEAEA),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                color: kDarkRed.withOpacity(0.3)),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 26,
-                                height: 26,
-                                alignment: Alignment.center,
-                                decoration: const BoxDecoration(
-                                  color: kDarkRed,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Text(
-                                  String.fromCharCode(65 + index),
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: kWhite,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              Flexible(
-                                child: Text(
-                                  currentQuestion.choices[index],
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(fontSize: 14, color: Colors.black87),
-                                ),
-                              ),
-                            ],
+                          child: Text(
+                            currentQuestion.explanation,
+                            style: TextStyle(
+                              fontSize: isSmall ? 13 : 14,
+                              color: Colors.black87,
+                              height: 1.35,
+                            ),
                           ),
                         ),
-                      );
-                    },
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: kDarkRed,
+                              foregroundColor: kWhite,
+                              elevation: 3,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: isSmall ? 12 : 14),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                            ),
+                            onPressed: () => _nextQuestion(questions),
+                            child: Text(
+                              lastAnswerCorrect == false
+                                  ? 'Andramo indray ny dingana'
+                                  : (currentIndex < questions.length - 1
+                                      ? 'Manaraka'
+                                      : 'Hijery ny valiny'),
+                              style: TextStyle(
+                                fontSize: isSmall ? 15 : 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
-                if (answered) ...[
-                  if (lastAnswerCorrect == false)
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.only(bottom: 8),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF9D6D6),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        selectedChoice == null
-                            ? 'Tapitra ny fotoana! Hiverina amin\'ny fiantombohan\'ny dingana $currentStage ianao.'
-                            : 'Diso! Hiverina amin\'ny fiantombohan\'ny dingana $currentStage ianao.',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          color: kDarkRed,
-                        ),
-                      ),
-                    ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    margin: const EdgeInsets.only(bottom: 12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFBEAEA),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: kDarkRed.withOpacity(0.3)),
-                    ),
-                    child: Text(
-                      currentQuestion.explanation,
-                      style: const TextStyle(fontSize: 14, color: Colors.black87),
-                    ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kDarkRed,
-                        foregroundColor: kWhite,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      onPressed: () => _nextQuestion(questions),
-                      child: Text(
-                        lastAnswerCorrect == false
-                            ? 'Andramo indray ny dingana'
-                            : (currentIndex < questions.length - 1
-                                ? 'Manaraka'
-                                : 'Hijery ny valiny'),
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  ),
-                ],
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),

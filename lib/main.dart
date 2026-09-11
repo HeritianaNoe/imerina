@@ -12,7 +12,7 @@ const Color kWhite = Colors.white;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Android/iOS => landscape (natsangana amin'ny sisiny).
+  // Mobile (Android/iOS) => portrait (mety kokoa amin'ny telefaonina).
   // Desktop (Windows/macOS/Linux) => portrait.
   final bool isMobile = !kIsWeb &&
       (defaultTargetPlatform == TargetPlatform.android ||
@@ -20,8 +20,18 @@ void main() async {
 
   await SystemChrome.setPreferredOrientations(
     isMobile
-        ? [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]
+        ? [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
         : [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+  );
+
+  // Status bar maivana mba hifanaraka amin'ny fond maizina.
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarColor: kDarkerRed,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ),
   );
 
   final bool isDesktop = !kIsWeb &&
@@ -73,8 +83,8 @@ class MerinaQuizApp extends StatelessWidget {
           backgroundColor: kDarkRed,
           foregroundColor: kWhite,
           elevation: 0,
+          centerTitle: true,
         ),
-        // Eto no nitsaharana ilay typo (ElevatedButtonThemeData no marina)
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: kDarkRed,
