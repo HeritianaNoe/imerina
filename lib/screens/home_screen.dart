@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
+import '../widgets/about_dialog.dart';
+import '../widgets/merina_backdrop.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,151 +11,207 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final isSmall = size.height < 700;
+    final int totalQuestions = kTotalStages * kQuestionsPerStage;
 
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          // ===== FOND IMAGE =====
-          // Apetraho ny sary ao amin'ny: assets/images/bg_merina.jpg
-          // Raha tsy misy dia mampiasa gradient mena maizina.
-          Image.asset(
-            'assets/images/bg_merina.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [kDarkRed, kDarkerRed],
+      body: MerinaBackdrop(
+        child: SafeArea(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 520),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: 1),
+                duration: const Duration(milliseconds: 700),
+                curve: Curves.easeOutCubic,
+                builder: (context, t, child) => Opacity(
+                  opacity: t,
+                  child: Transform.translate(
+                    offset: Offset(0, (1 - t) * 14),
+                    child: child,
                   ),
                 ),
-              );
-            },
-          ),
-          // Overlay maizina mba hahazoana hamaky tsara ny soratra
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  kDarkRed.withOpacity(0.70),
-                  kDarkerRed.withOpacity(0.88),
-                ],
-              ),
-            ),
-          ),
-          // Contenu
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: size.width > 500 ? 48.0 : 24.0,
-                vertical: 16,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Logo / Icon
-                  Container(
-                    padding: EdgeInsets.all(isSmall ? 16 : 22),
-                    decoration: BoxDecoration(
-                      color: kWhite,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.25),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Icon(
-                      Icons.account_balance,
-                      size: isSmall ? 48 : 64,
-                      color: kDarkRed,
-                    ),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    size.width > 500 ? 0 : 28,
+                    4,
+                    size.width > 500 ? 0 : 28,
+                    24,
                   ),
-                  SizedBox(height: isSmall ? 20 : 28),
-                  // Titre
-                  Text(
-                    'Quiz Imerina',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: isSmall ? 28 : 36,
-                      fontWeight: FontWeight.bold,
-                      color: kWhite,
-                      letterSpacing: 0.5,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black.withOpacity(0.4),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  // Description
-                  Text(
-                    "Fantaro ny tantaran'ny Fanjakana Merina",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: isSmall ? 14 : 16,
-                      color: Colors.white.withOpacity(0.85),
-                      height: 1.4,
-                    ),
-                  ),
-                  SizedBox(height: isSmall ? 36 : 52),
-                  // Bouton Manomboka
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kWhite,
-                        foregroundColor: kDarkRed,
-                        elevation: 4,
-                        padding: EdgeInsets.symmetric(
-                          vertical: isSmall ? 14 : 18,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          icon: const Icon(Icons.info_outline),
+                          color: kWhite.withOpacity(0.8),
+                          tooltip: "Momba ny appli",
+                          onPressed: () => showMerinaAboutDialog(context),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => const QuizScreen(),
+                      const Spacer(flex: 2),
+                      const _Emblem(),
+                      SizedBox(height: isSmall ? 24 : 36),
+                      Text(
+                        'Quiz\nImerina',
+                        style: kDisplay(
+                          size: isSmall ? 52 : 64,
+                          height: 1.02,
+                          spacing: -0.5,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 340),
+                        child: Text(
+                          "Fantaro ny tantaran'ny Fanjakana Merina",
+                          style: TextStyle(
+                            fontSize: isSmall ? 15 : 17,
+                            height: 1.45,
+                            color: kWhite.withOpacity(0.82),
                           ),
-                        );
-                      },
-                      child: Text(
-                        'Manomboka ny Quiz',
-                        style: TextStyle(
-                          fontSize: isSmall ? 16 : 18,
-                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                    ),
+                      SizedBox(height: isSmall ? 24 : 32),
+                      IntrinsicHeight(
+                        child: Row(
+                          children: [
+                            _Fact(value: '$kTotalStages', label: 'dingana'),
+                            const _FactDivider(),
+                            _Fact(
+                                value: '$totalQuestions',
+                                label: 'fanontaniana'),
+                            const _FactDivider(),
+                            _Fact(
+                                value: '${kQuestionDurationSeconds}s',
+                                label: 'isaky ny iray'),
+                          ],
+                        ),
+                      ),
+                      const Spacer(flex: 3),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kWhite,
+                            foregroundColor: kDarkRed,
+                            elevation: 0,
+                            padding: EdgeInsets.symmetric(
+                                vertical: isSmall ? 16 : 20),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const QuizScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Manomboka ny Quiz',
+                            style: TextStyle(
+                              fontSize: isSmall ? 16 : 18,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.2,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Center(
+                        child: Text(
+                          'Version 1.0.0',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: kWhite.withOpacity(0.45),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Version 1.0.0',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white.withOpacity(0.5),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Emblema: diamondra volamena misy ny sary tranobe ao anatiny.
+class _Emblem extends StatelessWidget {
+  const _Emblem();
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 84,
+      height: 84,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Transform.rotate(
+            angle: 0.7853981634,
+            child: Container(
+              width: 58,
+              height: 58,
+              decoration: BoxDecoration(
+                border: Border.all(color: kGold, width: 1.5),
+                borderRadius: BorderRadius.circular(6),
+              ),
+            ),
+          ),
+          Transform.rotate(
+            angle: 0.7853981634,
+            child: Container(
+              width: 46,
+              height: 46,
+              decoration: BoxDecoration(
+                color: kWhite,
+                borderRadius: BorderRadius.circular(4),
+              ),
+            ),
+          ),
+          const Icon(Icons.account_balance, size: 26, color: kDarkRed),
         ],
       ),
     );
   }
+}
+
+class _Fact extends StatelessWidget {
+  final String value;
+  final String label;
+  const _Fact({required this.value, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(value, style: kDisplay(size: 24, color: kGold)),
+        const SizedBox(height: 2),
+        Text(
+          label,
+          style: TextStyle(fontSize: 12, color: kWhite.withOpacity(0.7)),
+        ),
+      ],
+    );
+  }
+}
+
+class _FactDivider extends StatelessWidget {
+  const _FactDivider();
+
+  @override
+  Widget build(BuildContext context) => Container(
+        width: 1,
+        margin: const EdgeInsets.symmetric(horizontal: 18),
+        color: kWhite.withOpacity(0.22),
+      );
 }

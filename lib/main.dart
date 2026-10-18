@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder;
 import 'package:flutter/services.dart';
 import 'package:window_manager/window_manager.dart';
 import 'screens/home_screen.dart';
@@ -8,6 +9,32 @@ import 'screens/home_screen.dart';
 const Color kDarkRed = Color(0xFF7A0C0C);
 const Color kDarkerRed = Color(0xFF4A0404);
 const Color kWhite = Colors.white;
+
+/// Loko fanampiny: taratasy mafana, volamena malefaka (fihaingoana royal),
+/// ary ink fotsy-mena ho an'ny soratra.
+const Color kPaper = Color(0xFFFAF6F3);
+const Color kGold = Color(0xFFD8B26A);
+const Color kInk = Color(0xFF2B1011);
+
+/// Style serif ho an'ny lohateny sy ny fanontaniana. Tsy mila package fanampiny:
+/// mampiasa serif misy amin'ny rafitra tsirairay.
+TextStyle kDisplay({
+  required double size,
+  Color color = kWhite,
+  FontWeight weight = FontWeight.w700,
+  double height = 1.12,
+  double spacing = 0,
+}) {
+  return TextStyle(
+    fontFamily: 'Georgia',
+    fontFamilyFallback: const ['Times New Roman', 'Noto Serif', 'serif'],
+    fontSize: size,
+    fontWeight: weight,
+    color: color,
+    height: height,
+    letterSpacing: spacing,
+  );
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,7 +99,7 @@ class MerinaQuizApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Roboto',
-        scaffoldBackgroundColor: kWhite,
+        scaffoldBackgroundColor: kPaper,
         colorScheme: ColorScheme.fromSeed(
           seedColor: kDarkRed,
           primary: kDarkRed,
@@ -91,6 +118,13 @@ class MerinaQuizApp extends StatelessWidget {
             foregroundColor: kWhite,
           ),
         ),
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+        }),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: kDarkRed,
           linearTrackColor: Color(0xFFF3D6D6),

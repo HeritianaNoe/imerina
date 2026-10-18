@@ -7,9 +7,9 @@ void showMerinaAboutDialog(BuildContext context) {
     context: context,
     builder: (context) {
       return AlertDialog(
-        backgroundColor: kWhite,
+        backgroundColor: kPaper,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(18),
         ),
         title: Row(
           children: const [
@@ -17,7 +17,13 @@ void showMerinaAboutDialog(BuildContext context) {
             SizedBox(width: 10),
             Text(
               'Quiz Imerina',
-              style: TextStyle(color: kDarkRed, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontFamily: 'Georgia',
+                fontFamilyFallback: ['Times New Roman', 'Noto Serif', 'serif'],
+                color: kDarkRed,
+                fontWeight: FontWeight.w700,
+                fontSize: 22,
+              ),
             ),
           ],
         ),
@@ -31,7 +37,7 @@ void showMerinaAboutDialog(BuildContext context) {
                 "kolontsain'ny Fanjakana Merina: ny mpanjaka nifandimby, "
                 "ny fombandrazana, ary ny toe-javatra lehibe niainan'ny "
                 "Fanjakana Merina.",
-                style: TextStyle(fontSize: 14, height: 1.4),
+                style: TextStyle(fontSize: 14, height: 1.5, color: kInk),
               ),
               SizedBox(height: 16),
               Text(
