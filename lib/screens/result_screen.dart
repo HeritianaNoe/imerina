@@ -63,7 +63,7 @@ class ResultScreen extends StatelessWidget {
                                 value: v,
                                 strokeWidth: 7,
                                 color: kGold,
-                                backgroundColor: kWhite.withOpacity(0.14),
+                                backgroundColor: kWhite.withValues(alpha: 0.14),
                               ),
                             ),
                             Column(
@@ -79,7 +79,7 @@ class ResultScreen extends StatelessWidget {
                                   'amin\'ny $total',
                                   style: TextStyle(
                                     fontSize: 14,
-                                    color: kWhite.withOpacity(0.7),
+                                    color: kWhite.withValues(alpha: 0.7),
                                   ),
                                 ),
                               ],
@@ -94,7 +94,7 @@ class ResultScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: isSmall ? 15 : 17,
-                        color: kWhite.withOpacity(0.88),
+                        color: kWhite.withValues(alpha: 0.88),
                         height: 1.45,
                       ),
                     ),
@@ -133,7 +133,7 @@ class ResultScreen extends StatelessWidget {
                         style: OutlinedButton.styleFrom(
                           foregroundColor: kWhite,
                           side: BorderSide(
-                              color: kWhite.withOpacity(0.5), width: 1.2),
+                              color: kWhite.withValues(alpha: 0.5), width: 1.2),
                           padding: EdgeInsets.symmetric(
                               vertical: isSmall ? 15 : 18),
                           shape: RoundedRectangleBorder(

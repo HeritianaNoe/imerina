@@ -256,7 +256,7 @@
     {
       "question": "Inona no antsoina hoe 'Menalamba'?",
       "choices": [
-        "Hetsi-panoherana tamin'ny fanjanahantany frantsay, avy amin'ny lamba mena nentiny",
+        "Hetsi-panoherana tamin'ny fanjanahantany, avy amin'ny lamba mena nentiny",
         "Fombam-panambadiana Merina",
         "Fitokisam-bola fahiny",
         "Antokom-piadidiana ara-panjakana"
@@ -366,7 +366,7 @@
     {
       "question": "Inona no atao hoe 'Vintana' amin'ny finoana Malagasy fahiny?",
       "choices": [
-        "Hevitra momba ny anjara-toe-piainana miankina amin'ny daty nahaterahana",
+        "Hevitra momba ny anjara toe-piainana",
         "Fombam-panambadiana",
         "Fitaovam-piadiana",
         "Antokom-piarahamonina"

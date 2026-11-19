@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
-import '../widgets/about_dialog.dart';
 import '../widgets/merina_backdrop.dart';
 import 'quiz_screen.dart';
 
@@ -40,15 +39,6 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: IconButton(
-                          icon: const Icon(Icons.info_outline),
-                          color: kWhite.withOpacity(0.8),
-                          tooltip: "Momba ny appli",
-                          onPressed: () => showMerinaAboutDialog(context),
-                        ),
-                      ),
                       const Spacer(flex: 2),
                       const _Emblem(),
                       SizedBox(height: isSmall ? 24 : 36),
@@ -68,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: isSmall ? 15 : 17,
                             height: 1.45,
-                            color: kWhite.withOpacity(0.82),
+                            color: kWhite.withValues(alpha: 0.82),
                           ),
                         ),
                       ),
@@ -126,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                           'Version 1.0.0',
                           style: TextStyle(
                             fontSize: 12,
-                            color: kWhite.withOpacity(0.45),
+                            color: kWhite.withValues(alpha: 0.45),
                           ),
                         ),
                       ),
@@ -198,7 +188,7 @@ class _Fact extends StatelessWidget {
         const SizedBox(height: 2),
         Text(
           label,
-          style: TextStyle(fontSize: 12, color: kWhite.withOpacity(0.7)),
+          style: TextStyle(fontSize: 12, color: kWhite.withValues(alpha: 0.7)),
         ),
       ],
     );
@@ -212,6 +202,6 @@ class _FactDivider extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         width: 1,
         margin: const EdgeInsets.symmetric(horizontal: 18),
-        color: kWhite.withOpacity(0.22),
+        color: kWhite.withValues(alpha: 0.22),
       );
 }

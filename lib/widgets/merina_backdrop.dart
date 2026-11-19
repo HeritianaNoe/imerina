@@ -41,15 +41,15 @@ class MerinaBackdrop extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                kDarkRed.withOpacity(topOpacity),
-                kDarkerRed.withOpacity(bottomOpacity),
+                kDarkRed.withValues(alpha: topOpacity),
+                kDarkerRed.withValues(alpha: bottomOpacity),
               ],
             ),
           ),
         ),
         Positioned.fill(
           child: CustomPaint(
-            painter: LambaPatternPainter(color: kGold.withOpacity(0.10)),
+            painter: LambaPatternPainter(color: kGold.withValues(alpha: 0.10)),
           ),
         ),
         child,
